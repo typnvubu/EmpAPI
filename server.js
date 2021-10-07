@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express=require('express');
-const PORT=8000;
+
 const helmet=require('helmet');
 const compression=require('compression');
 
@@ -33,6 +33,8 @@ app.route('/')
     res.sendFile(process.cwd() + '/index.html');
 });
 
-app.listen(PORT || process.env.PORT,()=>{
+
+const PORT=8000 || process.env.PORT;
+app.listen(PORT,()=>{
     console.log('Server is running....');
 })

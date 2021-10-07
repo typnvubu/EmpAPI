@@ -33,6 +33,6 @@ app.route('/')
     res.sendFile(process.cwd() + '/index.html');
 });
 
-app.listen(PORT,()=>{
+app.listen(PORT || process.env.PORT,()=>{
     console.log('Server is running....');
 })
